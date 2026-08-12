@@ -1,0 +1,12 @@
+{
+  "claude_code_version": "2.1.228",
+  "captured_on": "2026-08-12",
+  "platform": "macOS 25.0.0 arm64",
+  "source": "repo-local budget-capped revalidation harness",
+  "sanitization": "Installation-specific lists were minimized; cwd, session and message UUIDs were redacted. Numeric measurements and the observed event nesting are unchanged.",
+  "budget_usd": 0.3,
+  "total_cost_usd": 0.10350029999999999,
+  "pre_compaction_tokens": 33610,
+  "post_compaction_tokens": 6459,
+  "marker_after_compaction": "REPORCH-REVALIDATION-21228 WORKER"
+}

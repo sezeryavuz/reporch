@@ -1,0 +1,18 @@
+[package]
+name = "reporch-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Pure domain model and protocol state machine for reporch."
+
+[dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+thiserror = "2.0.19"
+
+[dev-dependencies]
+insta = "1.48.0"
+proptest = "1.11.0"
+serde_json = "1.0.151"

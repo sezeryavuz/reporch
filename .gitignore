@@ -1,0 +1,50 @@
+# Rust
+/target/
+**/target/
+*.pdb
+# cargo-dist
+/dist/
+
+# insta snapshot review leftovers
+*.snap.new
+*.pending-snap
+
+# Scratch space for M0 spikes. Captured fixtures belong in fixtures/ and ARE committed —
+# they are the test corpus for the stream-json parser.
+/scratch/
+/tmp/
+
+# Local reporch state, if a dev points REPORCH_HOME here during testing
+/.reporch/
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.directory
+.Trash-*
+
+# Environment / secrets — reporch reads and copies .env files between worktrees,
+# so never let one land in this repo by accident.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Claude Code local session settings. Project-level .claude/settings.json IS committed
+# if the project adopts shared settings; the .local.json variant never is.
+.claude/settings.local.json
+
+# Local Codex project settings are machine-specific and may contain private MCP or
+# environment configuration. They are never part of the public repository.
+/.codex/

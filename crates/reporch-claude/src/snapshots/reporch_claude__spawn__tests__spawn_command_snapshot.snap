@@ -1,0 +1,5 @@
+---
+source: crates/reporch-claude/src/spawn.rs
+expression: build(&spec()).to_display_string()
+---
+claude -p --input-format stream-json --output-format stream-json --verbose --include-partial-messages --replay-user-messages --session-id 1f4e8a20-0000-4000-8000-000000000001 --name modulex-ui@TASK-0001 --model opus --effort xhigh --permission-mode bypassPermissions --settings '{"crossSessionInbound":"accept","permissions":{"deny":["SendMessage","ListAgents","Bash(git push:*)","Bash(gh pr create:*)","Bash(gh pr merge:*)","Bash(curl:* | sh)","Bash(curl:* | bash)","Read(~/.ssh/**)","Edit(~/.ssh/**)","Write(~/.ssh/**)","Read(~/.claude/**)","Edit(~/.claude/**)","Write(~/.claude/**)","Edit(~/.reporch/config.toml)","Write(~/.reporch/config.toml)","Edit(/tmp/**)","Write(/tmp/**)","Edit(/private/tmp/**)","Write(/private/tmp/**)"]}}' --append-system-prompt PROTOCOL --add-dir /home/u/.reporch/projects/modulex/tasks/org-scoped-api-keys-TASK-0001 --max-budget-usd 10.00 --strict-mcp-config

@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "claude",
+    "-p",
+    "--input-format",
+    "stream-json",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--include-partial-messages",
+    "--replay-user-messages",
+    "--model",
+    "sonnet",
+    "--permission-mode",
+    "bypassPermissions",
+    "--max-budget-usd",
+    "0.05",
+    "--name",
+    "reporch-spike-7ed34e6a",
+    "--session-id",
+    "22222222-2222-4222-8222-000000000002"
+  ],
+  "cwd": "/tmp/reporch-fixture/spikerepo",
+  "session_id_requested": "22222222-2222-4222-8222-000000000002",
+  "name": "reporch-spike-fixture",
+  "turns": [
+    {
+      "index": 0,
+      "text": "Use the Bash tool to run these one at a time, each as a separate tool call: `ls`, `pwd`, `date`, `whoami`, `git log --oneline`, `cat README.md`, `cat calc.py`, `wc -l README.md`, `uname -a`, `echo done`. Then summarise.",
+      "event_types": {
+        "system": 14,
+        "user": 1,
+        "stream_event": 19,
+        "assistant": 3,
+        "result": 1
+      },
+      "idle_before_s": 0,
+      "first_event_at": 2.9766757488250732,
+      "replay_at": 7.965419054031372,
+      "result_at": 12.637877941131592,
+      "result": {
+        "subtype": "error_max_budget_usd",
+        "is_error": true,
+        "duration_ms": 7391,
+        "num_turns": 1,
+        "total_cost_usd": 0.1862916,
+        "session_id": "22222222-2222-4222-8222-000000000002",
+        "usage": {
+          "input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 0,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [
+
+          ],
+          "speed": "standard"
+        },
+        "permission_denials": [
+
+        ]
+      },
+      "outcome": "result"
+    }
+  ],
+  "started_at": 1786163588.3999832,
+  "exit_code": 1,
+  "outcome": "ok",
+  "stderr": [
+
+  ],
+  "wall_s": 13.497903823852539,
+  "sanitization": "Machine paths and session identifiers were replaced with deterministic fixture values; numeric measurements and protocol outcomes are unchanged."
+}

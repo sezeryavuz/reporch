@@ -1,0 +1,89 @@
+name: Bug report
+description: Report reproducible incorrect or unsafe reporch behavior
+title: "[bug]: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. For vulnerabilities or accidental secret exposure, stop and follow SECURITY.md instead of filing publicly.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and its impact.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Give the smallest sequence of commands or console keys that reproduces the problem. Replace repository names and paths if private.
+      placeholder: |
+        1. Run `reporch`
+        2. Open ...
+        3. Press ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "`reporch doctor` output"
+      description: Run `reporch doctor` (or `reporch doctor --json`) and redact usernames, paths, providers and credentials before pasting.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: claude-version
+    attributes:
+      label: Claude Code version
+      description: Paste the output of `claude --version`.
+      placeholder: 2.1.226
+    validations:
+      required: true
+
+  - type: input
+    id: reporch-version
+    attributes:
+      label: reporch version or commit
+      description: Paste `reporch --version` or the Git commit hash.
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: OS version, architecture, terminal and shell.
+      placeholder: macOS 15 arm64, Ghostty, zsh
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Include only redacted logs or task-state excerpts that materially help. Never post secrets or private source.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues for this behavior.
+          required: true
+        - label: I removed credentials and private repository content from this report.
+          required: true
+        - label: This is not a security vulnerability requiring private disclosure.
+          required: true
