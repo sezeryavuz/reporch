@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and usage discussions
+    url: https://github.com/sezeryavuz/reporch/discussions
+    about: Ask for setup help or discuss workflows that are not yet actionable bug reports.
+  - name: Private security report
+    url: https://github.com/sezeryavuz/reporch/security/advisories/new
+    about: Report vulnerabilities privately; do not include them in a public issue.
+

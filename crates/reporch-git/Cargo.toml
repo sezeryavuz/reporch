@@ -1,0 +1,17 @@
+[package]
+name = "reporch-git"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Real-Git worktree, branch, hook, and merge operations for reporch."
+
+[dependencies]
+reporch-core = { version = "0.1.0", path = "../reporch-core" }
+thiserror = "2.0.19"
+tracing = "0.1.44"
+
+[dev-dependencies]
+tempfile = "3.27.0"

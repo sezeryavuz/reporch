@@ -1,0 +1,57 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/reporch",
+    "crates/reporch-core",
+    "crates/reporch-store",
+    "crates/reporch-claude",
+    "crates/reporch-git",
+    "crates/reporch-scan",
+    "xtask",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT"
+repository = "https://github.com/sezeryavuz/reporch"
+homepage = "https://github.com/sezeryavuz/reporch"
+authors = ["Sezer Ufuk Yavuz"]
+
+[workspace.dependencies]
+reporch-core = { path = "crates/reporch-core", version = "0.1.0" }
+reporch-store = { path = "crates/reporch-store", version = "0.1.0" }
+reporch-claude = { path = "crates/reporch-claude", version = "0.1.0" }
+reporch-git = { path = "crates/reporch-git", version = "0.1.0" }
+reporch-scan = { path = "crates/reporch-scan", version = "0.1.0" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
+
+# cargo-dist. `dist init` regenerates .github/workflows/release.yml from this table.
+#
+# NOTE: this pipeline is authored and committed but has never been executed. Nothing has been
+# published to crates.io, npm, or a Homebrew tap, and no release has been cut.
+[workspace.metadata.dist]
+cargo-dist-version = "0.28.0"
+ci = "github"
+installers = ["shell", "homebrew", "npm"]
+tap = "sezeryavuz/homebrew-tap"
+publish-jobs = ["homebrew", "npm"]
+npm-package = "reporch"
+# No Windows target: cross-session messaging does not exist on native Windows (§4.5, §14).
+# WSL 2 is the documented Windows story and is served by the linux-gnu builds.
+targets = [
+    "aarch64-apple-darwin",
+    "x86_64-apple-darwin",
+    "x86_64-unknown-linux-gnu",
+    "aarch64-unknown-linux-gnu",
+]
+install-path = "CARGO_HOME"
+install-updater = true
+# `rp` ships alongside `reporch` from every installer (§14).
+[workspace.metadata.dist.bin-aliases]
+reporch = ["rp"]

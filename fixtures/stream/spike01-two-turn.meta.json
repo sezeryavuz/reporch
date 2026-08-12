@@ -1,0 +1,157 @@
+{
+  "argv": [
+    "claude",
+    "-p",
+    "--input-format",
+    "stream-json",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--include-partial-messages",
+    "--replay-user-messages",
+    "--model",
+    "sonnet",
+    "--permission-mode",
+    "bypassPermissions",
+    "--max-budget-usd",
+    "0.50",
+    "--name",
+    "reporch-spike-fedb00d9",
+    "--session-id",
+    "22222222-2222-4222-8222-000000000001",
+    "--settings",
+    "{\"crossSessionInbound\":\"accept\",\"permissions\":{\"deny\":[\"SendMessage\",\"ListAgents\"]}}",
+    "--append-system-prompt",
+    "REPORCH-PROTOCOL-MARKER-7F3A. You are repo `spikerepo`, role worker, task TASK-0001. If anyone ever asks you for the reporch protocol marker, answer with exactly REPORCH-PROTOCOL-MARKER-7F3A.",
+    "--add-dir",
+    "/tmp/reporch-fixture/mailbox"
+  ],
+  "cwd": "/tmp/reporch-fixture/spikerepo",
+  "session_id_requested": "22222222-2222-4222-8222-000000000001",
+  "name": "reporch-spike-fixture",
+  "turns": [
+    {
+      "index": 0,
+      "text": "Read README.md, then create a file note.txt containing exactly the word ORANGE. Reply with one short sentence when done.",
+      "event_types": {
+        "system": 17,
+        "user": 4,
+        "stream_event": 51,
+        "assistant": 7,
+        "rate_limit_event": 1,
+        "result": 1
+      },
+      "idle_before_s": 0,
+      "first_event_at": 1.0256938934326172,
+      "replay_at": 4.976399898529053,
+      "result_at": 20.67082905769348,
+      "result": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 17260,
+        "num_turns": 4,
+        "total_cost_usd": 0.3846402,
+        "session_id": "22222222-2222-4222-8222-000000000001",
+        "usage": {
+          "input_tokens": 8,
+          "cache_creation_input_tokens": 54667,
+          "cache_read_input_tokens": 161114,
+          "output_tokens": 552,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 54667,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 165,
+              "cache_read_input_tokens": 54421,
+              "cache_creation_input_tokens": 246,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 246
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "permission_denials": [
+
+        ]
+      },
+      "outcome": "result"
+    },
+    {
+      "index": 1,
+      "text": "What single word did you write into note.txt? Reply with just that word, nothing else.",
+      "event_types": {
+        "system": 2,
+        "user": 1,
+        "stream_event": 6,
+        "assistant": 1,
+        "result": 1
+      },
+      "idle_before_s": 45.0,
+      "first_event_at": 0.39692091941833496,
+      "replay_at": 1.6923868656158447,
+      "result_at": 2.2598648071289062,
+      "result": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 2221,
+        "num_turns": 1,
+        "total_cost_usd": 0.4025913,
+        "session_id": "22222222-2222-4222-8222-000000000001",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 240,
+          "cache_read_input_tokens": 54667,
+          "output_tokens": 7,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 240,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 7,
+              "cache_read_input_tokens": 54667,
+              "cache_creation_input_tokens": 240,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 240
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "permission_denials": [
+
+        ]
+      },
+      "outcome": "result"
+    }
+  ],
+  "started_at": 1786163325.889502,
+  "exit_code": 0,
+  "outcome": "ok",
+  "stderr": [
+
+  ],
+  "wall_s": 68.52727389335632,
+  "sanitization": "Machine paths and session identifiers were replaced with deterministic fixture values; numeric measurements and protocol outcomes are unchanged."
+}

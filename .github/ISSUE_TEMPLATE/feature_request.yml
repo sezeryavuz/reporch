@@ -1,0 +1,50 @@
+name: Feature request
+description: Propose a change to reporch's workflow, protocol or platform support
+title: "[feature]: "
+labels: [enhancement, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem before the proposed interface. Protocol, permission and merge changes must preserve the safety model in enhanced_brief.md.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow is difficult or impossible today, and who encounters it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain the console or CLI behavior, persisted state and failure handling you expect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What can users do today, and why is it insufficient?
+    validations:
+      required: true
+
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety and compatibility impact
+      description: Address permissions, spend, brief trust, process ownership, human merge confirmation, platform support and migration where relevant.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: invariant
+    attributes:
+      label: Invariants
+      options:
+        - label: This proposal does not add unattended or `--yes` merge confirmation.
+          required: true
+

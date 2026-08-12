@@ -1,0 +1,44 @@
+[package]
+name = "reporch"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "One task, every repo, one console. Runs a single development task across every repository of a multi-repo project by orchestrating a Claude Code session inside each one."
+readme = "../../README.md"
+keywords = ["claude", "agent", "monorepo", "multi-repo", "orchestration"]
+categories = ["command-line-utilities", "development-tools"]
+documentation = "https://github.com/sezeryavuz/reporch"
+# The crate ships the specification and docs it cites, so `cargo package` stays self-describing.
+include = ["src/**/*", "tests/**/*", "examples/**/*", "fixtures/**/*", "protocol.md", "../../README.md"]
+
+# `rp` is the short alias (§14). A second [[bin]] rather than a symlink, so it works identically
+# from `cargo install`, Homebrew, the shell installer and npm.
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.6", features = ["derive"] }
+crossterm = "0.29.0"
+jiff = "0.2.35"
+ratatui = "0.29.0"
+reporch-claude = { version = "0.1.0", path = "../reporch-claude" }
+reporch-core = { version = "0.1.0", path = "../reporch-core" }
+reporch-git = { version = "0.1.0", path = "../reporch-git" }
+reporch-scan = { version = "0.1.0", path = "../reporch-scan" }
+reporch-store = { version = "0.1.0", path = "../reporch-store" }
+serde = "1.0.229"
+serde_json = "1.0.151"
+semver = "1.0.28"
+thiserror = "2.0.19"
+tokio = { version = "1.53.1", features = ["full"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+tui-textarea = "0.7.0"
+ureq = "3.3.0"
+
+[dev-dependencies]
+assert_cmd = "2.2.2"
+insta = "1.48.0"
+predicates = "3.1.4"
+tempfile = "3.27.0"

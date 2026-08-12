@@ -1,0 +1,7 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc f7ca968d04f204f85f160de99b0f82183b16d4cbd4d53376354cc59634a63155 # shrinks to log = [BriefRead { id: BriefId(1), by: "example-app", at_ms: 0 }, TurnEnded { repo: "example-app", cumulative_cost_usd: 0.0, at_ms: 0 }, SessionDied { repo: "example-app-ui", reason: Crashed, at_ms: 0 }, BriefFiled { id: BriefId(1), from: "example-app-ui", to: "example-app", kind: Request, at_ms: 0 }, Tick { at_ms: 589806 }]
