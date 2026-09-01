@@ -11,7 +11,7 @@ description = "Fast repository discovery, caching, and relevance ranking for rep
 [dependencies]
 # 0.4.30 adopted let-chains (Rust 1.88) without declaring that MSRV. Keep the
 # published library compatible with the workspace's Rust 1.85 contract.
-ignore = "=0.4.29"
+ignore = "=0.4.33"
 nucleo-matcher = "0.3.1"
 rayon = "1.12.0"
 serde = { version = "1.0.229", features = ["derive"] }
